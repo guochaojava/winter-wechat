@@ -11,7 +11,7 @@
 
     <bean id="weChatTemplate" class="com.lgd.winter.wechat.core.WeChatTemplate">
         <property name="baseConfig" ref="baseConfig"/>
-    </bean>
+    </bean>
 第二步 注入类
 
     @Autowired
