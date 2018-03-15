@@ -28,4 +28,6 @@ public interface TecentOperations {
      * @return
      */
     String getQrCodeTicket(String accessToken, Map<String, Object> map);
+
+    
 }

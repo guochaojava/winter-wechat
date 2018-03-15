@@ -24,6 +24,10 @@ public class WeChatTemplate implements WeChatOperations, TecentOperations, MiniO
 
     private BaseConfig baseConfig;
 
+    private WeChatTemplate(){
+
+    }
+
     public WeChatTemplate(BaseConfig config) {
         this.baseConfig = config;
     }
