@@ -5,7 +5,7 @@
 
 使用方法
 
-第一步引用maven依赖  
+第一步引用maven依赖  （中央仓库版本方法较低，可自行打包最新项目生成jar本地调用）
 
     <dependency>
 	    <groupId>com.github.guochaojava</groupId>
@@ -30,4 +30,4 @@
     
 第四步 调用方法 注意所有方法返回都为json字符串
 
-    String result = weChatTemplate.opsForTecent().getAccessToken();
+    String result = weChatTemplate.getAccessToken();
