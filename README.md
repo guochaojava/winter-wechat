@@ -16,8 +16,8 @@
 第二步 spring配置bean
 
     <bean id="baseConfig" class="com.lgd.winter.wechat.config.BaseConfig">
-        <property name="appId" value="appId"/>
-        <property name="appSecret" value="appSecret"/>
+        <property name="appId" value="你微信公众号的appId"/>
+        <property name="appSecret" value="你微信公众号的appSecret"/>
     </bean>
 
     <bean id="weChatTemplate" class="com.lgd.winter.wechat.core.WeChatTemplate">
@@ -30,4 +30,4 @@
     
 第四步 调用方法 注意所有方法返回都为json字符串
 
-    String result = weChatTemplate.getAccessToken();
+    String result = weChatTemplate.opsForTecent().getAccessToken();
