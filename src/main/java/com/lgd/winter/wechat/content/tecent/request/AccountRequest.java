@@ -1,10 +1,9 @@
 package com.lgd.winter.wechat.content.tecent.request;
 
+
 /**
- * @Date: 2018/3/13
- * @Time: 14:45
- * @Author GuoChao.
- * @Description: TODO 账号相关请求
+ * 账号相关请求
+ * @author guochao
  */
 public final class AccountRequest {
     //创建二维码ticket 自行设定的参数（scene_id）

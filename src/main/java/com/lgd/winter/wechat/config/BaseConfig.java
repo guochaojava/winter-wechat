@@ -2,11 +2,10 @@ package com.lgd.winter.wechat.config;
 
 import lombok.Data;
 
+
 /**
- * @Date: 2018/3/13
- * @Time: 10:10
- * @Author GuoChao.
- * @Description: TODO 微信相关基本配置
+ * 微信基础配置Bean
+ * @author guochao
  */
 @Data
 public class BaseConfig {

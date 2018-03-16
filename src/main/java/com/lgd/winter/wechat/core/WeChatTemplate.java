@@ -14,10 +14,8 @@ import lombok.Data;
 import java.util.Map;
 
 /**
- * @Date: 2018/3/13
- * @Time: 10:21
- * @Author GuoChao.
- * @Description: TODO 核心操作类
+ * 核心操作类
+ * @author guochao
  */
 @Data
 public class WeChatTemplate implements WeChatOperations, TecentOperations, MiniOperations, PayOperations {

@@ -1,10 +1,8 @@
 package com.lgd.winter.wechat.content.tecent.request;
 
 /**
- * @Date: 2018/3/13
- * @Time: 14:36
- * @Author GuoChao.
- * @Description: TODO 用户相关请求
+ * 用户相关请求
+ * @author guochao
  */
 public final class UserRequest {
     //创建标签

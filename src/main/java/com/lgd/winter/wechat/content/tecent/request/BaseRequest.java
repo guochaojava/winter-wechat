@@ -1,10 +1,8 @@
 package com.lgd.winter.wechat.content.tecent.request;
 
 /**
- * @Date: 2018/3/13
- * @Time: 11:20
- * @Author GuoChao.
- * @Description: TODO 基本请求
+ * 基本请求
+ * @author guochao
  */
 public final class BaseRequest {
     //获取access_token
