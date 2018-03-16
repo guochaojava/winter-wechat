@@ -4,6 +4,7 @@ package com.lgd.winter.wechat.content.tecent.request;
 /**
  * 账号相关请求
  * @author guochao
+ * @since 0.0.1
  */
 public final class AccountRequest {
     //创建二维码ticket 自行设定的参数（scene_id）

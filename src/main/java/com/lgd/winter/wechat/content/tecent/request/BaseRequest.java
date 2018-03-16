@@ -3,6 +3,7 @@ package com.lgd.winter.wechat.content.tecent.request;
 /**
  * 基本请求
  * @author guochao
+ * @since 0.0.1
  */
 public final class BaseRequest {
     //获取access_token

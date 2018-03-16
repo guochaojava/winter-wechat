@@ -4,6 +4,7 @@ package com.lgd.winter.wechat.content.tecent.request;
 /**
  * 卡卷相关请求
  * @author guochao
+ * @since 0.0.1
  */
 public final class CardRequest {
     //上传图片接口

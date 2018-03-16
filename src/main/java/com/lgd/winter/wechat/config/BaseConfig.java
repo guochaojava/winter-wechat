@@ -6,6 +6,7 @@ import lombok.Data;
 /**
  * 微信基础配置Bean
  * @author guochao
+ * @since 0.0.1
  */
 @Data
 public class BaseConfig {
