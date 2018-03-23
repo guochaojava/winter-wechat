@@ -34,6 +34,12 @@
             <version>1.16.18</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.10</version>
+        </dependency>
     </dependencies>
 
     <issueManagement>

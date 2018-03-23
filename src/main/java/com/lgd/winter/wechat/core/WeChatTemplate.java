@@ -3,6 +3,8 @@ package com.lgd.winter.wechat.core;
 import com.lgd.winter.wechat.config.BaseConfig;
 import com.lgd.winter.wechat.content.mini.core.DefaultMiniOperations;
 import com.lgd.winter.wechat.content.mini.core.MiniOperations;
+import com.lgd.winter.wechat.content.pay.core.DefaultPayOperations;
+import com.lgd.winter.wechat.content.pay.core.PayOperations;
 import com.lgd.winter.wechat.content.tecent.core.DefaultTecentOperations;
 import com.lgd.winter.wechat.content.tecent.core.TecentOperations;
 import lombok.Data;
@@ -23,6 +25,8 @@ public class WeChatTemplate implements WeChatOperations {
 
     private MiniOperations miniOps;
 
+    private PayOperations payOps;
+
     private WeChatTemplate() {
 
     }
@@ -40,6 +44,14 @@ public class WeChatTemplate implements WeChatOperations {
         }
         return miniOps;
     }
+
+    public PayOperations opsForPay() {
+        if (payOps == null) {
+            payOps = new DefaultPayOperations(baseConfig);
+        }
+        return payOps;
+    }
+
 
     public WeChatTemplate(BaseConfig config) {
         this.baseConfig = config;
