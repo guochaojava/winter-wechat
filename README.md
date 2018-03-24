@@ -3,6 +3,7 @@
 
 [点击跳转使用示例](https://github.com/guochaojava/winter-wechat-demo)
 
+
 使用方法
 
 第一步引用maven依赖
@@ -31,3 +32,5 @@
 第四步 调用方法 注意所有方法返回都为json字符串
 
     String result = weChatTemplate.opsForTecent().getAccessToken();
+    
+### 更多方法点击[API](https://www.guochaojava.com/wechat/api/)
