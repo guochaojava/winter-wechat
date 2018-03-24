@@ -5,12 +5,12 @@
 
 使用方法
 
-第一步引用maven依赖  （中央仓库版本方法较低，可自行打包最新项目生成jar本地调用）
+第一步引用maven依赖
 
     <dependency>
 	    <groupId>com.github.guochaojava</groupId>
-		<artifactId>winter-wechat</artifactId>
-		<version>0.0.2</version>
+		    <artifactId>winter-wechat</artifactId>
+		    <version>0.0.2</version>
 	</dependency>
 
 第二步 spring配置bean
