@@ -39,6 +39,7 @@ public interface PayOperations {
      * @param param 拒绝参数
      * @param type  交易类型  JSAPP-小程序支付  APP-APP支付
      * @return 微信接口返回
+     * @throws Exception 异常
      */
     String refund(PayRefundParam param, String type) throws Exception;
 }

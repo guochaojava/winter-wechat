@@ -10,7 +10,7 @@
     <dependency>
 	    <groupId>com.github.guochaojava</groupId>
 		<artifactId>winter-wechat</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2</version>
 	</dependency>
 
 第二步 spring配置bean
@@ -30,4 +30,4 @@
     
 第四步 调用方法 注意所有方法返回都为json字符串
 
-    String result = weChatTemplate.getAccessToken();
+    String result = weChatTemplate.opsForTecent().getAccessToken();

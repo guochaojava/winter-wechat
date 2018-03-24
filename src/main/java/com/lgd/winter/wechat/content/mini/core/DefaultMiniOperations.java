@@ -6,7 +6,7 @@ import com.lgd.winter.wechat.content.mini.request.MiniRequest;
 
 /**
  * @author GuoChao.
- * @since
+ * @since 0.0.2
  */
 public class DefaultMiniOperations implements MiniOperations {
 

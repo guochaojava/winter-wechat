@@ -6,7 +6,7 @@ import lombok.Data;
  * 微信支付-下单接口参数
  *
  * @author GuoChao.
- * @since
+ * @since 0.0.2
  */
 @Data
 public class PayUnifiedOrderParam {

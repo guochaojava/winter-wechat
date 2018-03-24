@@ -2,7 +2,7 @@ package com.lgd.winter.wechat.content.pay.request;
 
 /**
  * @author GuoChao.
- * @since
+ * @since 0.0.2
  */
 public final class BaseRequest {
     //统一下单
