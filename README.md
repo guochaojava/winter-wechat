@@ -1,5 +1,5 @@
 # winter-wechat
-微信接口集成
+#### 我们只简单封装调用微信接口不涉及业务处理
 
 [点击跳转使用示例](https://github.com/guochaojava/winter-wechat-demo)
 
@@ -9,8 +9,8 @@
 
     <dependency>
 	    <groupId>com.github.guochaojava</groupId>
-		    <artifactId>winter-wechat</artifactId>
-		    <version>0.0.2</version>
+		<artifactId>winter-wechat</artifactId>
+		<version>0.0.2</version>
 	</dependency>
 
 第二步 spring配置bean
