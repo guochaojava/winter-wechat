@@ -33,4 +33,4 @@
 
     String result = weChatTemplate.opsForTecent().getAccessToken();
     
-### 更多方法点击[API](https://www.guochaojava.com/wechat/api/)
+### 更多方法点击[API](https://blog.guochaojava.com/javadoc/wechat/)

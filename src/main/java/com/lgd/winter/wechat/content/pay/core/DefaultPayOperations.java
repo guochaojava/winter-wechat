@@ -18,6 +18,7 @@ import com.lgd.winter.wechat.content.pay.util.XmlUtil;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.security.KeyStore;
