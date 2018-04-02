@@ -79,7 +79,7 @@
         </developer>
     </developers>
 
-    <!--<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -99,30 +99,8 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>-->
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-        <finalName>winter-wechat</finalName>
     </build>
+
     <profiles>
         <profile>
             <id>release</id>
