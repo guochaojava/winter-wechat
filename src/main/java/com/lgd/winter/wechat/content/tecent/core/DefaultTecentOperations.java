@@ -1,5 +1,6 @@
 package com.lgd.winter.wechat.content.tecent.core;
 
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
 import com.lgd.winter.wechat.config.BaseConfig;
@@ -40,5 +41,11 @@ public class DefaultTecentOperations implements TecentOperations {
         String url = AccountRequest.QRCODE_CREATE_TICKET_POST.replaceAll("TOKEN", accessToken);
         String a = JSONUtil.toJsonPrettyStr(map);
         return HttpUtil.post(url, a);
+    }
+
+    @Override
+    public long getQrCode(String ticket,String path) {
+        String url = AccountRequest.QRCODE_CREATE_GET.replaceAll("TICKET", ticket);
+        return HttpUtil.downloadFile(url, FileUtil.file(path));
     }
 }
