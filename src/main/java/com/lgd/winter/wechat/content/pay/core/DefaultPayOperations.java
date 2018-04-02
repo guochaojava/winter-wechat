@@ -5,22 +5,26 @@ import cn.hutool.core.lang.Console;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
-import cn.hutool.http.HttpConnection;
 import cn.hutool.http.HttpUtil;
-import cn.hutool.http.Method;
-import cn.hutool.http.ssl.SSLSocketFactoryBuilder;
 import com.lgd.winter.wechat.config.BaseConfig;
 import com.lgd.winter.wechat.content.pay.param.PayRefundParam;
 import com.lgd.winter.wechat.content.pay.param.PayUnifiedOrderParam;
 import com.lgd.winter.wechat.content.pay.request.BaseRequest;
 import com.lgd.winter.wechat.content.pay.util.XmlUtil;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ssl.DefaultHostnameVerifier;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContexts;
+import org.apache.http.util.EntityUtils;
 
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManagerFactory;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.security.KeyStore;
 import java.util.Comparator;
 import java.util.Map;
@@ -161,22 +165,33 @@ public class DefaultPayOperations implements PayOperations {
 
     @Override
     public String refund(PayRefundParam param, String type) throws Exception {
-        SSLSocketFactoryBuilder ssfb = new SSLSocketFactoryBuilder();
-        //设置协议
-        ssfb.setProtocol(SSLSocketFactoryBuilder.TLSv1);
-        //设置
-        KeyStore keyStore  = KeyStore.getInstance("PKCS12");
-        keyStore.load(new FileInputStream(param.getPath()),param.getPassword().toCharArray());
-        TrustManagerFactory tmf=TrustManagerFactory.getInstance("SunX509");
-        tmf.init(keyStore);
-        ssfb.setTrustManagers(tmf.getTrustManagers());
-        SSLSocketFactory ssf = ssfb.build();
-        HttpConnection httpConnection =HttpConnection.create("", Method.POST,null, ssf);
-        HttpConnection connect = httpConnection.connect();
-        OutputStream outputStream = connect.getOutputStream();
-        Console.log(outputStream);
-        connect.disconnect();
-        return null;
+        KeyStore keystore = KeyStore.getInstance("PKCS12");
+        char[] partnerId2charArray = param.getPassword().toCharArray();
+        keystore.load(new FileInputStream(param.getPath()), partnerId2charArray);
+        SSLContext sslContext = SSLContexts.custom().loadKeyMaterial(keystore, partnerId2charArray).build();
+
+        HttpClientBuilder httpClientBuilder = HttpClients.custom();
+
+        SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslContext,
+                new String[]{"TLSv1"}, null, new DefaultHostnameVerifier());
+        httpClientBuilder.setSSLSocketFactory(sslsf);
+
+        HttpPost httpPost = new HttpPost(BaseRequest.PAY_REFUND);
+        httpPost.setEntity(null);
+
+        httpPost.setConfig(RequestConfig.custom()
+                .setConnectionRequestTimeout(5000)
+                .setConnectTimeout(5000)
+                .setSocketTimeout(10000)
+                .build());
+
+        CloseableHttpClient httpclient = httpClientBuilder.build();
+        CloseableHttpResponse response = httpclient.execute(httpPost);
+        String responseString = EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8);
+        Console.log(responseString);
+        httpPost.releaseConnection();
+
+        return responseString;
     }
 
     /**
