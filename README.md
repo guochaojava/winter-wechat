@@ -11,7 +11,7 @@
     <dependency>
 	    <groupId>com.github.guochaojava</groupId>
 		<artifactId>winter-wechat</artifactId>
-		<version>0.0.2</version>
+		<version>0.0.3</version>
 	</dependency>
 
 第二步 spring配置bean
