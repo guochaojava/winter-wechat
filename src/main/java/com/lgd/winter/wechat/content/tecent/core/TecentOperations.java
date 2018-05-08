@@ -1,10 +1,13 @@
 package com.lgd.winter.wechat.content.tecent.core;
 
-import com.lgd.winter.wechat.content.tecent.bean.TecentAccessTokenResult;
-
-import java.util.Map;
+import com.lgd.winter.wechat.content.tecent.bean.param.TecentQrCodeTicketParam;
+import com.lgd.winter.wechat.content.tecent.bean.result.TecentAccessTokenResult;
+import com.lgd.winter.wechat.content.tecent.bean.result.TecentQrTicketResult;
+import com.lgd.winter.wechat.content.tecent.bean.result.TecentUserInfoResult;
 
 /**
+ * 公众平台操作类
+ *
  * @author guochao
  */
 public interface TecentOperations {
@@ -12,7 +15,7 @@ public interface TecentOperations {
     /**
      * 获取accessToken
      *
-     * @return 微信接口返回数据
+     * @return TecentAccessTokenResult 对象
      */
     TecentAccessTokenResult getAccessToken();
 
@@ -21,18 +24,18 @@ public interface TecentOperations {
      *
      * @param accessToken 微信凭证
      * @param openId      用户openId
-     * @return 微信接口返回数据
+     * @return TecentUserInfoResult 对象
      */
-    String getUserInfo(String accessToken, String openId);
+    TecentUserInfoResult getUserInfo(String accessToken, String openId);
 
     /**
      * 获取二维码ticket
      *
      * @param accessToken 微信凭证
-     * @param map         接口参数
+     * @param param       TecentQrCodeParam参数对象
      * @return 微信接口返回数据
      */
-    String getQrCodeTicket(String accessToken, Map<String, Object> map);
+    TecentQrTicketResult getQrCodeTicket(String accessToken, TecentQrCodeTicketParam param);
 
     /**
      * 通过ticket换取二维码

@@ -12,11 +12,11 @@ import lombok.Data;
 @Data
 public class BaseConfig {
     /**
-     * 第三方用户唯一凭证
+     * 公众平台用户唯一凭证
      */
     private String appId;
     /**
-     * 第三方用户唯一凭证密钥
+     * 公众平台用户唯一凭证密钥
      */
     private String appSecret;
     /**
