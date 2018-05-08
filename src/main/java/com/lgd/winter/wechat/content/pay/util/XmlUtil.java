@@ -46,10 +46,12 @@ public final class XmlUtil {
 
     private static class MapEntryConverter implements Converter {
 
+        @Override
         public boolean canConvert(Class clazz) {
             return AbstractMap.class.isAssignableFrom(clazz);
         }
 
+        @Override
         public void marshal(Object value, HierarchicalStreamWriter writer, MarshallingContext context) {
 
             AbstractMap map = (AbstractMap) value;
@@ -65,14 +67,15 @@ public final class XmlUtil {
 
         }
 
+        @Override
         public Object unmarshal(HierarchicalStreamReader reader, UnmarshallingContext context) {
 
-            Map<String, String> map = new HashMap<String, String>();
+            Map<String, String> map = new HashMap<String, String>(16);
 
             while (reader.hasMoreChildren()) {
                 reader.moveDown();
-
-                String key = reader.getNodeName(); // nodeName aka element's name
+                // nodeName aka element's name
+                String key = reader.getNodeName();
                 String value = reader.getValue();
                 map.put(key, value);
 

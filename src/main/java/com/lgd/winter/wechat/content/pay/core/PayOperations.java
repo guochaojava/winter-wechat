@@ -3,6 +3,9 @@ package com.lgd.winter.wechat.content.pay.core;
 import com.lgd.winter.wechat.content.pay.param.PayRefundParam;
 import com.lgd.winter.wechat.content.pay.param.PayUnifiedOrderParam;
 
+/**
+ * @author guochao
+ */
 public interface PayOperations {
     /**
      * 统一下单

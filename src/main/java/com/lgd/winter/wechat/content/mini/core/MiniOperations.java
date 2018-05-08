@@ -1,5 +1,8 @@
 package com.lgd.winter.wechat.content.mini.core;
 
+/**
+ * @author guochao
+ */
 public interface MiniOperations {
 
     /**

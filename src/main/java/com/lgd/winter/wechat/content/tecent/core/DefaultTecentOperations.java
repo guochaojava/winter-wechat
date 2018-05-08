@@ -4,6 +4,7 @@ import cn.hutool.core.io.FileUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
 import com.lgd.winter.wechat.config.BaseConfig;
+import com.lgd.winter.wechat.content.tecent.bean.TecentAccessTokenResult;
 import com.lgd.winter.wechat.content.tecent.request.AccountRequest;
 import com.lgd.winter.wechat.content.tecent.request.BaseRequest;
 import com.lgd.winter.wechat.content.tecent.request.UserRequest;
@@ -23,10 +24,12 @@ public class DefaultTecentOperations implements TecentOperations {
     }
 
     @Override
-    public String getAccessToken() {
+    public TecentAccessTokenResult getAccessToken() {
         String url = BaseRequest.ACCESS_TOKEN_GET.replaceAll("APPID", baseConfig.getAppId());
         url = url.replaceAll("APPSECRET", baseConfig.getAppSecret());
-        return HttpUtil.get(url);
+        String result = HttpUtil.get(url);
+        TecentAccessTokenResult tatr = JSONUtil.toBean(result, TecentAccessTokenResult.class);
+        return tatr;
     }
 
     @Override
@@ -44,7 +47,7 @@ public class DefaultTecentOperations implements TecentOperations {
     }
 
     @Override
-    public long getQrCode(String ticket,String path) {
+    public long getQrCode(String ticket, String path) {
         String url = AccountRequest.QRCODE_CREATE_GET.replaceAll("TICKET", ticket);
         return HttpUtil.downloadFile(url, FileUtil.file(path));
     }

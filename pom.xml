@@ -8,7 +8,7 @@
 
     <groupId>com.github.guochaojava</groupId>
     <artifactId>winter-wechat</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.4</version>
     <name>winter-wechat</name>
     <description>封装微信接口</description>
     <url>https://github.com/guochaojava/winter-wechat</url>
@@ -18,7 +18,7 @@
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
 
         <!-- versions -->
-        <hutool.version>4.0.7</hutool.version>
+        <hutool.version>4.0.10</hutool.version>
     </properties>
 
     <dependencies>

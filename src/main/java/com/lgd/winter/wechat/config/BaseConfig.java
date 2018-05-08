@@ -5,25 +5,38 @@ import lombok.Data;
 
 /**
  * 微信基础配置Bean
+ *
  * @author guochao
  * @since 0.0.1
  */
 @Data
 public class BaseConfig {
-    //第三方用户唯一凭证
+    /**
+     * 第三方用户唯一凭证
+     */
     private String appId;
-    //第三方用户唯一凭证密钥
+    /**
+     * 第三方用户唯一凭证密钥
+     */
     private String appSecret;
-    //小程序唯一凭证
+    /**
+     * 小程序唯一凭证
+     */
     private String miniAppId;
-    //小程序唯一凭证秘钥
+    /**
+     * 小程序唯一凭证秘钥
+     */
     private String miniAppSecret;
-    //微信支付商户凭证
+    /**
+     * 微信支付商户凭证
+     */
     private String merchantId;
-    //微信支付秘钥
+    /**
+     * 微信支付秘钥
+     */
     private String merchantSecret;
 
-    public BaseConfig(){
+    public BaseConfig() {
 
     }
 

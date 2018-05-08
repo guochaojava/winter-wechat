@@ -1,7 +1,12 @@
 package com.lgd.winter.wechat.content.tecent.core;
 
+import com.lgd.winter.wechat.content.tecent.bean.TecentAccessTokenResult;
+
 import java.util.Map;
 
+/**
+ * @author guochao
+ */
 public interface TecentOperations {
 
     /**
@@ -9,7 +14,7 @@ public interface TecentOperations {
      *
      * @return 微信接口返回数据
      */
-    String getAccessToken();
+    TecentAccessTokenResult getAccessToken();
 
     /**
      * 获取用户基本信息
@@ -37,4 +42,6 @@ public interface TecentOperations {
      * @return 二维码大小
      */
     long getQrCode(String ticket, String path);
+
+
 }

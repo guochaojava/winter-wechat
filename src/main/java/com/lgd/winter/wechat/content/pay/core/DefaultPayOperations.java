@@ -48,9 +48,9 @@ public class DefaultPayOperations implements PayOperations {
     public String unifiedOrder(PayUnifiedOrderParam param) {
         Map<String, String> map = new TreeMap<>();
         //必须参数
-        if (StrUtil.isNotEmpty(param.getTradeType()) && param.getTradeType().equals("JSAPP")) {
+        if (StrUtil.isNotEmpty(param.getTradeType()) && "JSAPP".equals(param.getTradeType())) {
             map.put("appid", baseConfig.getMiniAppId());
-        } else if (StrUtil.isNotEmpty(param.getTradeType()) && param.getTradeType().equals("APP")) {
+        } else if (StrUtil.isNotEmpty(param.getTradeType()) && "APP".equals(param.getTradeType())) {
             map.put("appid", baseConfig.getAppId());
         }
 
@@ -114,9 +114,9 @@ public class DefaultPayOperations implements PayOperations {
     public String closeOrder(String outTradeNo, String signType, String type) {
         Map<String, String> map = new TreeMap<>();
         //必须参数
-        if (StrUtil.isNotEmpty(type) && type.equals("JSAPP")) {
+        if (StrUtil.isNotEmpty(type) && "JSAPP".equals(type)) {
             map.put("appid", baseConfig.getMiniAppId());
-        } else if (StrUtil.isNotEmpty(type) && type.equals("APP")) {
+        } else if (StrUtil.isNotEmpty(type) && "APP".equals(type)) {
             map.put("appid", baseConfig.getAppId());
         }
         map.put("mch_id", baseConfig.getMerchantId());
@@ -138,9 +138,9 @@ public class DefaultPayOperations implements PayOperations {
     @Override
     public String orderQuery(String transactionId, String outTradeNo, String signType, String type) {
         Map<String, String> map = new TreeMap<>();
-        if (StrUtil.isNotEmpty(type) && type.equals("JSAPP")) {
+        if (StrUtil.isNotEmpty(type) && "JSAPP".equals(type)) {
             map.put("appid", baseConfig.getMiniAppId());
-        } else if (StrUtil.isNotEmpty(type) && type.equals("APP")) {
+        } else if (StrUtil.isNotEmpty(type) && "APP".equals(type)) {
             map.put("appid", baseConfig.getAppId());
         }
         map.put("mch_id", baseConfig.getMerchantId());
