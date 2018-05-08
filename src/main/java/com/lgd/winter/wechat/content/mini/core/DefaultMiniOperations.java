@@ -1,7 +1,9 @@
 package com.lgd.winter.wechat.content.mini.core;
 
 import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONUtil;
 import com.lgd.winter.wechat.config.BaseConfig;
+import com.lgd.winter.wechat.content.mini.bean.result.MiniClientInfoResult;
 import com.lgd.winter.wechat.content.mini.request.MiniRequest;
 
 /**
@@ -17,10 +19,12 @@ public class DefaultMiniOperations implements MiniOperations {
     }
 
     @Override
-    public String getClientInfo(String jsCode) {
+    public MiniClientInfoResult getClientInfo(String jsCode) {
         String url = MiniRequest.CLIENT_INFO_GET.replaceAll("APPID", baseConfig.getMiniAppId());
         url = url.replaceAll("SECRET", baseConfig.getMiniAppSecret());
         url = url.replaceAll("JSCODE", jsCode);
-        return HttpUtil.get(url);
+        String result = HttpUtil.get(url);
+        MiniClientInfoResult miniClientInfoResult = JSONUtil.toBean(result, MiniClientInfoResult.class);
+        return miniClientInfoResult;
     }
 }
