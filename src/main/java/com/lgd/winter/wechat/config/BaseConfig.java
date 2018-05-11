@@ -36,6 +36,24 @@ public class BaseConfig {
      */
     private String merchantSecret;
 
+
+    /**
+     * 第三方用户唯一凭证
+     */
+    private String componentAppId;
+    /**
+     * 第三方用户唯一凭证密钥
+     */
+    private String componentAppSecret;
+    /**
+     * 第三方token
+     */
+    private String componentToken;
+    /**
+     * 第三方消息key
+     */
+    private String componentKey;
+
     public BaseConfig() {
 
     }

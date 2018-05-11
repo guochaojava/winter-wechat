@@ -1,6 +1,8 @@
 package com.lgd.winter.wechat.core;
 
 import com.lgd.winter.wechat.config.BaseConfig;
+import com.lgd.winter.wechat.content.component.core.ComponentOperations;
+import com.lgd.winter.wechat.content.component.core.DefaultComponentOperations;
 import com.lgd.winter.wechat.content.mini.core.DefaultMiniOperations;
 import com.lgd.winter.wechat.content.mini.core.MiniOperations;
 import com.lgd.winter.wechat.content.page.core.DefaultPageOperations;
@@ -46,6 +48,11 @@ public class WeChatTemplate implements WeChatOperations {
      */
     private PageOperations pageOps;
 
+    /**
+     * 第三方模块
+     */
+    private ComponentOperations componentOps;
+
     private WeChatTemplate() {
 
     }
@@ -76,6 +83,13 @@ public class WeChatTemplate implements WeChatOperations {
             pageOps = new DefaultPageOperations(baseConfig);
         }
         return pageOps;
+    }
+
+    public ComponentOperations opsForComponent() {
+        if (componentOps == null) {
+            componentOps = new DefaultComponentOperations(baseConfig);
+        }
+        return componentOps;
     }
 
     public WeChatTemplate(BaseConfig config) {
