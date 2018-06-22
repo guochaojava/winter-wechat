@@ -29,7 +29,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期
      * @param endDate     结束日期，限定查询1天数据，end_date允许设置的最大值为昨日
-     * @return
+     * @return 结果
      */
     DataOverviewListResult getDataOverview(String accessToken, String beginDate, String endDate);
 
@@ -39,7 +39,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期
      * @param endDate     结束日期，限定查询1天数据，end_date允许设置的最大值为昨日
-     * @return
+     * @return 结果
      */
     DataTendencyListResult getDataDayTendency(String accessToken, String beginDate, String endDate);
 
@@ -49,7 +49,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期，为周一日期
      * @param endDate     结束日期，为周日日期，限定查询一周数据
-     * @return
+     * @return 结果
      */
     DataTendencyListResult getDataWeekTendency(String accessToken, String beginDate, String endDate);
 
@@ -59,7 +59,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期，为自然月第一天
      * @param endDate     结束日期，为自然月最后一天，限定查询一个月数据
-     * @return
+     * @return 结果
      */
     DataTendencyListResult getDataMonthTendency(String accessToken, String beginDate, String endDate);
 
@@ -69,7 +69,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期
      * @param endDate     结束日期，限定查询1天数据，end_date允许设置的最大值为昨日
-     * @return
+     * @return 结果
      */
     DataVisitDistributionListResult getDataVisitDistribution(String accessToken, String beginDate, String endDate);
 
@@ -79,7 +79,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期
      * @param endDate     结束日期，限定查询1天数据，end_date允许设置的最大值为昨日
-     * @return
+     * @return 结果
      */
     DataRetainInfoResult getDataDayRetainInfo(String accessToken, String beginDate, String endDate);
 
@@ -89,7 +89,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期，为周一日期
      * @param endDate     结束日期，为周日日期，限定查询一周数据
-     * @return
+     * @return 结果
      */
     DataRetainInfoResult getDataWeekRetainInfo(String accessToken, String beginDate, String endDate);
 
@@ -99,7 +99,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期，为自然月第一天
      * @param endDate     结束日期，为自然月最后一天，限定查询一个月数据
-     * @return
+     * @return 结果
      */
     DataRetainInfoResult getDataMonthRetainInfo(String accessToken, String beginDate, String endDate);
 
@@ -109,7 +109,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate   开始日期
      * @param endDate     结束日期，限定查询1天数据，end_date允许设置的最大值为昨日
-     * @return
+     * @return 结果
      */
     DataVisitPageListResult getDataVisitPage(String accessToken, String beginDate, String endDate);
 
@@ -119,7 +119,7 @@ public interface MiniOperations {
      * @param accessToken token
      * @param beginDate 开始日期
      * @param endDate 结束日期，开始日期与结束日期相差的天数限定为0/6/29，分别表示查询最近1/7/30天数据，end_date允许设置的最大值为昨日
-     * @return
+     * @return 结果
      */
     DataUserPortraitResult getUserPortrait(String accessToken, String beginDate, String endDate);
 }

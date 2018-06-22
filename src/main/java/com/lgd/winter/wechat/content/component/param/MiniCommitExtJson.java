@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * @author GuoChao.
- * @since
+ * @since 0.0.5
  */
 @Data
 public class MiniCommitExtJson {

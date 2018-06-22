@@ -2,7 +2,7 @@ package com.lgd.winter.wechat.content.component.request;
 
 /**
  * @author guochao.
- * @since
+ * @since 0.0.5
  */
 public final class BaseRequest {
     /**

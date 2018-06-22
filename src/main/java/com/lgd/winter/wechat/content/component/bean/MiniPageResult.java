@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @author GuoChao.
- * @since
+ * @since 0.0.5
  */
 @Data
 public class MiniPageResult {

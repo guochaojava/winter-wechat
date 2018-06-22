@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @author GuoChao.
- * @since
+ * @since 0.0.5
  */
 @Data
 public class MiniCommitResult {

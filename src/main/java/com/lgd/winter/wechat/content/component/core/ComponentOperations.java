@@ -34,7 +34,7 @@ public interface ComponentOperations {
      *
      * @param componentAccessToken 第三方component_access_token
      * @param authorizationCode    授权code
-     * @return
+     * @return  AuthResultBean 对象
      */
     AuthResultBean getAuthorizationInfo(String componentAccessToken, String authorizationCode);
 
@@ -44,7 +44,7 @@ public interface ComponentOperations {
      * @param componentAccessToken   第三方component_access_token
      * @param authorizerAppid        授权方appid
      * @param authorizerRefreshToken 刷新token
-     * @return
+     * @return RefreshAuthorizationInfo对象
      */
     RefreshAuthorizationInfo refreshAuthorizationInfo(String componentAccessToken, String authorizerAppid, String authorizerRefreshToken);
 
@@ -119,5 +119,13 @@ public interface ComponentOperations {
      */
     String business(String token, String action, List<String> domain);
 
+    /**
+     * 小程序模版
+     *
+     * @param token 授权token
+     * @param id 模版id
+     * @param list 合并列表
+     * @return 结果
+     */
     MiniTemplateResult template(String token, String id, int[] list);
 }
