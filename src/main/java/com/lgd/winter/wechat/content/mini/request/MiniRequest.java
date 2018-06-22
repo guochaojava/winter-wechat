@@ -9,6 +9,11 @@ package com.lgd.winter.wechat.content.mini.request;
 public final class MiniRequest {
 
     /**
+     * 获取access_token
+     */
+    public static final String ACCESS_TOKEN_GET = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
+
+    /**
      * 获取用户openId等数据
      */
     public static final String CLIENT_INFO_GET = "https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code";
